@@ -1,0 +1,26 @@
+import cv2
+import cvlib as cv
+from cvlib.object_detection import draw_bbox
+import matplotlib.pyplot as plt
+import os
+
+# setează calea către folderul cu imaginile
+img_folder = '/home/sorin/Desktop/algoritmi'
+
+# iterează prin fiecare imagine din folder și aplică algoritmul de detectare și numărare
+for filename in os.listdir(img_folder):
+    if filename.endswith('.jpg') or filename.endswith('.png'): 
+        # încarcă imaginea
+        img = cv2.imread(os.path.join(img_folder, filename))
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+        # detectează obiecte și desenează dreptunghiuri delimitatoare
+        bbox, label, conf = cv.detect_common_objects(img)
+        output_img = draw_bbox(img, bbox, label, conf)
+
+        # numără obiecte și afișează imaginea cu dreptunghiuri delimitatoare
+        num_objects = len(label)
+        plt.imshow(output_img)
+        plt.title("Detectare obiecte și numărare - numărul obiectelor: " + str(num_objects))
+        plt.axis("off")
+        plt.show()
