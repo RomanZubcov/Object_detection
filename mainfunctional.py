@@ -14,7 +14,7 @@ class_labels = open("labels.txt", "r").readlines()
 
 # Inițializează cameră web
 cap = cv2.VideoCapture(0)
-
+# comentariu
 while True:
     # Citește frame-ul de la cameră
     ret, frame = cap.read()
