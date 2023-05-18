@@ -6,15 +6,14 @@ import numpy as np
 from tensorflow import keras
 
 # Încarcă modelul antrenat
-model = tf.keras.models.load_model('keras_model.h5')
+model = tf.keras.models.load_model('/home/roman/Desktop/proiect/keras_model.h5')
 
 # Etichetele claselor
-#class_labels = ['cola', 'sprite', 'fanta']
-class_labels = open("labels.txt", "r").readlines()
+class_labels = open("/home/roman/Desktop/proiect/labels.txt", "r").readlines()
 
 # Inițializează cameră web
 cap = cv2.VideoCapture(0)
-# comentariu
+
 while True:
     # Citește frame-ul de la cameră
     ret, frame = cap.read()
@@ -34,6 +33,12 @@ while True:
     predictions = model.predict(input_image)
     predicted_class_index = np.argmax(predictions)
     predicted_class_label = class_labels[predicted_class_index]
+    
+    # Obține coordonatele dreptunghiului pentru obiectul detectat
+    x, y, w, h = cv2.boundingRect(frame)
+    
+    # Desenează dreptunghiul în jurul obiectului detectat
+    cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
     
     # Desenează eticheta clasei pe frame
     cv2.putText(frame, predicted_class_label, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
