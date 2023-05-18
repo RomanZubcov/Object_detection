@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<cascade>
+  <stageType>BOOST</stageType>
+  <featureType>HAAR</featureType>
+  <height>20</height>
+  <width>20</width>
+  <stageParams>
+    <maxWeakCount>3</maxWeakCount>
+    <maxDepth>1</maxDepth>
+  </stageParams>
+  <featureParams>
+    <maxCatCount>0</maxCatCount>
+    <featSize>
+      <height>1</height>
+      <width>1</width>
+    </featSize>
+    <mode>ALL</mode>
+    <thr>0.5</thr>
+    <winSize>
+      <height>20</height>
+      <width>20</width>
+    </winSize>
+    <rects>
+      <_>
+        <x>0</x>
+        <y>0</y>
+        <width>20</width>
+        <height>20</height>
+        <weight>-1</weight>
+      </_>
+    </rects>
+    <tilted>false</tilted>
+  </featureParams>
+  <stages>
+    <_>
+      <maxWeakCount>3</maxWeakCount>
+      <stageThreshold>-0.999</stageThreshold>
+      <weakClassifiers>
+        <_>
+          <internalNodes>
+            0 -1 0 -1 1 4</internalNodes>
+          <leafValues>
+            -1 0</leafValues>
+        </_>
+        <_>
+          <internalNodes>
+            0 -1 0 -1 1 4</internalNodes>
+          <leafValues>
+            -1 0</leafValues>
+        </_>
+        <_>
+          <internalNodes>
+            0 -1 0 -1 1 4</internalNodes>
+          <leafValues>
+            -1 0</leafValues>
+        </_>
+      </weakClassifiers>
+    </_>
+  </stages>
+</cascade>
+</opencv_storage>

@@ -6,10 +6,10 @@ import numpy as np
 from tensorflow import keras
 
 # Load
-model = tf.keras.models.load_model('keras_model.h5')
+model = tf.keras.models.load_model('/home/roman/Desktop/proiect/keras_model.h5')
 
 # Class labels
-class_labels = open("labels.txt", "r").readlines()
+class_labels = open("/home/roman/Desktop/proiect/labels.txt", "r").readlines()
 
 # Initialize webcam
 cap = cv2.VideoCapture(0)

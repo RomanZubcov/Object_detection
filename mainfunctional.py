@@ -34,12 +34,6 @@ while True:
     predicted_class_index = np.argmax(predictions)
     predicted_class_label = class_labels[predicted_class_index]
     
-    # Obține coordonatele dreptunghiului pentru obiectul detectat
-    x, y, w, h = cv2.boundingRect(frame)
-    
-    # Desenează dreptunghiul în jurul obiectului detectat
-    cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-    
     # Desenează eticheta clasei pe frame
     cv2.putText(frame, predicted_class_label, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
     
